@@ -22,36 +22,72 @@
     "Parrots",
   ];
 
-  let quiz = [];
+  const detail: Array<string> = [
+    "time budgeting",
+    "senses",
+    "social behaviour",
+    "reproductive behaviour",
+    "typical normal species behaviour",
+  ];
 
-  const handleClick = () => {
-    let combo = [];
+  let compareTwoQuiz = [];
 
-    combo.push(uniqueNamesGenerator({ dictionaries: [senses] }));
-    combo.push(uniqueNamesGenerator({ dictionaries: [animals] }));
-    combo.push(
+  const handleCompareTwo = () => {
+    let quizCombo = [];
+
+    quizCombo.push(uniqueNamesGenerator({ dictionaries: [senses] }));
+    quizCombo.push(uniqueNamesGenerator({ dictionaries: [animals] }));
+    quizCombo.push(
       uniqueNamesGenerator({
-        dictionaries: [animals.filter((animal) => animal != combo[1])],
+        dictionaries: [animals.filter((animal) => animal != quizCombo[1])],
       })
     );
 
-    quiz = combo;
+    compareTwoQuiz = quizCombo;
+  };
+
+  let detailQuiz = [];
+
+  const handleDetailQuiz = () => {
+    let quizCombo = [];
+
+    quizCombo.push(uniqueNamesGenerator({ dictionaries: [detail] }));
+    quizCombo.push(uniqueNamesGenerator({ dictionaries: [animals] }));
+    detailQuiz = quizCombo;
   };
 </script>
 
-<button on:click={handleClick}>Click Here</button>
+<hr />
 
-<div class="quiz">
-  {#if quiz[0]}
+<button on:click={handleCompareTwo}>Compare Senses</button>
+
+{#if compareTwoQuiz[0]}
+  <div class="quiz">
     <div>
-      Compare the <span class="bold">{quiz[0]}</span> of
-      <span class="bold">{quiz[1]}</span>
-      and <span class="bold">{quiz[2]}</span>
+      Compare the <span class="bold">{compareTwoQuiz[0]}</span> of
+      <span class="bold">{compareTwoQuiz[1]}</span>
+      and <span class="bold">{compareTwoQuiz[2]}</span>
     </div>
-  {/if}
-</div>
+  </div>
+{/if}
+
+<hr />
+
+<button on:click={handleDetailQuiz}>Behavior Details</button>
+
+{#if detailQuiz[0]}
+  <div class="quiz">
+    <div>
+      Describe the <span class="bold">{detailQuiz[0]}</span> of
+      <span class="bold">{detailQuiz[1]}</span>
+    </div>
+  </div>
+{/if}
 
 <style>
+  hr {
+    margin: 4rem 0;
+  }
   .bold {
     font-weight: bold;
   }
