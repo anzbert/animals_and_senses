@@ -27,7 +27,7 @@
     "senses",
     "social behaviour",
     "reproductive behaviour",
-    "typical normal species behaviour",
+    "species-typical behaviour",
   ];
 
   let compareTwoQuiz = [];
