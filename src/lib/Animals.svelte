@@ -24,7 +24,7 @@
 
   let quiz = [];
 
-  const getCombo = () => {
+  const handleClick = () => {
     let combo = [];
 
     combo.push(uniqueNamesGenerator({ dictionaries: [senses] }));
@@ -39,7 +39,7 @@
   };
 </script>
 
-<button on:click={getCombo}>Click Here</button>
+<button on:click={handleClick}>Click Here</button>
 
 <div class="quiz">
   {#if quiz[0]}

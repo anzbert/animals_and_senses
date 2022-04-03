@@ -3,8 +3,7 @@
 </script>
 
 <main>
-  <h1>Hello Cathy!</h1>
-
+  <h1>Random Study</h1>
   <Animals />
 </main>
 
@@ -27,6 +26,6 @@
     font-weight: 100;
     line-height: 1.1;
     margin: 2rem auto;
-    max-width: 14rem;
+    max-width: 500px;
   }
 </style>
