@@ -1,11 +1,10 @@
 <script lang="ts">
-  import logo from "./assets/svelte.png";
   import Animals from "./lib/Animals.svelte";
 </script>
 
 <main>
   <h1>Hello Cathy!</h1>
-  <!-- <p>Click for new Combination</p> -->
+
   <Animals />
 </main>
 
@@ -21,11 +20,6 @@
     margin: 0 auto;
   }
 
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
-
   h1 {
     color: #ff3e00;
     text-transform: uppercase;
@@ -34,21 +28,5 @@
     line-height: 1.1;
     margin: 2rem auto;
     max-width: 14rem;
-  }
-
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
-    }
-
-    p {
-      max-width: none;
-    }
   }
 </style>
