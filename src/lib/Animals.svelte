@@ -30,6 +30,32 @@
     "species-typical behaviour",
   ];
 
+  const drugs: Array<string> = [
+    "Selegilline",
+    "Fluoxetine",
+    "Clomipramine",
+    "Acepromazine",
+    "Alprazolam",
+    "Lorazepam",
+    "Diazepam",
+    "Propentofylline",
+    "Propanolol",
+    "Trazodone",
+    "Gabapentin",
+    "Clonidine",
+    "Medetomidine",
+    "Buspirone",
+    "Phenylpropanolamine (Propalin)",
+    "Azeperone",
+    "Cyproheptadine",
+    "Amitriptyline",
+    "Sertraline",
+    "Mirtazapine",
+    "Melatonin",
+    "Alpha-casozepine",
+    "Tryptophan",
+  ];
+
   let compareTwoQuiz = [];
 
   const handleCompareTwo = () => {
@@ -54,6 +80,11 @@
     quizCombo.push(uniqueNamesGenerator({ dictionaries: [detail] }));
     quizCombo.push(uniqueNamesGenerator({ dictionaries: [animals] }));
     detailQuiz = quizCombo;
+  };
+
+  let detailDrug = "";
+  const handleDrug = () => {
+    detailDrug = uniqueNamesGenerator({ dictionaries: [drugs] });
   };
 </script>
 
@@ -80,6 +111,19 @@
     <div>
       Describe the <span class="bold">{detailQuiz[0]}</span> of
       <span class="bold">{detailQuiz[1]}</span>
+    </div>
+  </div>
+{/if}
+
+<hr />
+
+<button on:click={handleDrug}>Drug Knowledge</button>
+
+{#if detailDrug}
+  <div class="quiz">
+    <div>
+      Describe the mechanism of action, effects, side-effects and
+      contraindication of <span class="bold">{detailDrug}</span>.
     </div>
   </div>
 {/if}
